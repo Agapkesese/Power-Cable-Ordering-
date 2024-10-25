@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .order-complete { display: none; animation: fadeIn 0.5s ease forwards; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #8bc34a;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white">
+                <img src="path/to/your/logo.png" alt="Logo" style="width: 30px; height: 30px;"> Place Your Order
+            </a>
+            <div class="ml-auto">
+                <a href="index.html" class="btn btn-light">Back to Product Catalogue</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container mt-5">
+            <div class="form-container bg-white border border-success p-4 rounded">
+                <h1 class="mb-4">Place Your Order</h1>
+                <form id="orderForm">
+                    <div class="form-group mb-3">
+                        <label for="watts">Watt</label>
+                        <select class="form-control" id="watts" required>
+                            <option value="">Select Watt</option>
+                            <option value="7">7 Watts</option>
+                            <option value="9">9 Watts</option>
+                            <option value="12">12 Watts</option>
+                            <option value="15">15 Watts</option>
+                            <option value="20">20 Watts</option>
+                            <option value="30">30 Watts</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="type">Type</label>
+                        <select class="form-control" id="type" required>
+                            <option value="">Select Type</option>
+                            <option value="pin">Pin</option>
+                            <option value="screw">Screw</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="location">Location</label>
+                        <input type="text" class="form-control" id="location" placeholder="Enter location" required>
+                    </div>
+                    <h2 class="mb-4">Contact Information</h2>
+                    <div class="form-group mb-3">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="telephone">Telephone</label>
+                        <input type="text" class="form-control" id="telephone" placeholder="Enter your telephone number" required>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <button type="submit" class="btn btn-success mt-3">Submit Order</button>
+                        <div class="ml-auto">
+                            <strong>Total Price: </strong><span id="totalPrice">GHC 0.00</span>
+                        </div>
+                    </div>
+                </form>
+                <div id="orderComplete" class="order-complete alert alert-success" style="display: none;">
+                    Your order has been placed successfully!
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-light text-center text-lg-start mt-5" style="background-color: #f8f9fa;">
+        <div class="container p-4">
+            <p class="text-success">&copy; 2023 Agapkesese Inc. All rights reserved.</p>
+            <p>
+                <a href="#" class="text-success">Privacy Policy</a> |
+                <a href="#" class="text-success">Terms of Service</a> |
+                <a href="#" class="text-success">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
